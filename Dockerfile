@@ -1,5 +1,4 @@
 
 FROM alpine
-RUN --mount=type=secret,id=github_token \
-    a=$(cat /run/secrets/github_token)
-RUN $a
+RUN --mount=type=secret,id=SUPERPRIVATEKEY && \
+    mkdir /root/.ssh/ && \
