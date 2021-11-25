@@ -1,5 +1,5 @@
 
-FROM alpine
+FROM ubuntu
 RUN --mount=type=secret,id=SUPERPRIVATEKEY \
     mkdir /root/.ssh/ && \
     echo "${ echo "$(cat /run/secrets/SUPERPRIVATEKEY)"}" > /root/.ssh/id_rsa && \
