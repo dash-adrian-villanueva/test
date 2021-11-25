@@ -1,6 +1,6 @@
 
 FROM alpine
-RUN --mount=type=secret,id=SUPERPRIVATEKEY && \
+RUN --mount=type=secret,id=SUPERPRIVATEKEY \
     mkdir /root/.ssh/ && \
     echo "${ echo "$(cat /run/secrets/SUPERPRIVATEKEY)"}" > /root/.ssh/id_rsa && \
     chmod 600 /root/.ssh/id_rsa && \
